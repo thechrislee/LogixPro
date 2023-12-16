@@ -1,0 +1,385 @@
+FILE,LAD 2: MAIN
+SOR,0 JSR,U:3 EOR,0
+RCM,
+SOR,1 JSR,U:4 EOR,1
+RCM,
+SOR,2 END,2
+RCM,
+FILE,SBR 3: DIGITAL IO
+SOR,0 XIC,I:1/0 OTE,B3:0/0 EOR,0
+RCM,
+SOR,1 XIC,I:1/1 OTE,B3:0/1 EOR,1
+RCM,
+SOR,2 XIO,I:1/2 OTE,B3:0/2 EOR,2
+RCM,
+SOR,3 XIC,I:1/3 OTE,B3:0/5 EOR,3
+RCM,
+SOR,4 XIC,I:1/4 OTE,B3:0/6 EOR,4
+RCM,
+SOR,5 XIC,B3:0/3 OTE,O:2/0 EOR,5
+RCM,
+SOR,6 XIC,B3:0/4 OTE,O:2/1 EOR,6
+RCM,
+SOR,7 XIC,B3:0/7 OTE,O:2/2 EOR,7
+RCM,
+SOR,8 XIC,B3:0/8 OTE,O:2/3 EOR,8
+RCM,
+SOR,9 XIC,B3:0/9 OTE,O:2/4 EOR,9
+RCM,
+SOR,10 END,10
+RCM,
+FILE,SBR 4: CONTROLS
+SOR,0 BST,1 XIC,B3:0/0 NXB,1 XIC,B3:0/3 BND,1 XIO,B3:0/4 XIC,B3:0/5 XIO,B3:0/2 OTE,B3:0/3 EOR,0
+RCM,Actuate up motor if open button is pressed and limit switch 1 is actuated. Door will continue to open after button is released.
+SOR,1 BST,1 XIC,B3:0/1 NXB,1 XIC,B3:0/4 BND,1 XIO,B3:0/6 XIO,B3:0/3 XIO,B3:0/2 OTE,B3:0/4 EOR,1
+RCM,Actuate down motor if close button pressed, limit switch 2 not activated and up motor not actuated.
+SOR,2 BST,1 XIO,B3:0/5 NXB,1 XIC,B3:0/3 XIC,S:4/4 BND,1 OTE,B3:0/8 EOR,2
+RCM,Turn on lamp when door is open, or cause lamp to blink when opening.
+SOR,3 BST,1 XIC,B3:0/6 NXB,1 XIC,B3:0/4 XIC,S:4/4 BND,1 OTE,B3:0/9 EOR,3
+RCM,Turn on lamp when door is fully closed, or cause lamp to blink when door is closing.
+SOR,4 BST,1 XIC,B3:0/3 NXB,1 BST,2 XIC,B3:0/4 NXB,2 XIC,S:4/5 XIO,B3:0/3 XIO,B3:0/4 XIC,B3:0/5 XIO,B3:0/6 BND,2 BND,1 OTE,B3:0/7 EOR,4
+RCM,Turn on "AJAR" lamp. The last branch handles the "blinking".
+SOR,5 END,5
+RCM,
+FILE,SBR 5:
+SOR,0 END,0
+RCM,
+FILE,SBR 6:
+SOR,0 END,0
+RCM,
+FILE,SBR 7:
+SOR,0 END,0
+RCM,
+FILE,SBR 8:
+SOR,0 END,0
+RCM,
+FILE,SBR 9:
+SOR,0 END,0
+RCM,
+BTBL
+256
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+NTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+FTBL
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+SYMBOLS
+U:3 DIGITAL IO
+B3:0/0 OPEN_BUTTON
+B3:0/1 CLOSE_BUTTON
+B3:0/2 STOP_BUTTON
+I:1/0 OPEN BUTTON INPUT
+I:1/1 CLOSE BUTTON INPUT
+I:1/2 STOP BUTTON INPUT
+B3:0/3 MOTOR_UP
+O:2/0 MOTOR UP OUTPUT
+B3:0/4 MOTOR_DOWN
+O:2/1 MOTOR DOWN OUTPUT
+B3:0/5 LIMIT_SWITCH_1
+I:1/3 LS1 INPUT
+B3:0/6 LIMIT_SWITCH_2
+I:1/4 LS2 INPUT
+O:2/2 AJAR LAMP OUTPUT
+O:2/3 OPEN LAMP OUTPUT
+B3:0/8 OPEN_LAMP
+O:2/4 SHUT LAMP OUTPUT
+B3:0/7 AJAR_LAMP
+B3:0/9 SHUT_LAMP
+S:4/4 STATUS_1
+S:4/5 STATUS_2
